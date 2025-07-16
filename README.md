@@ -124,33 +124,33 @@ Answer: Automatic or implicit conversion of values from one data type to another
 
 # Operators & Control Flow
 ## 🔢 JavaScript Operators
-1. Arithmetic Operators:
+### 1. Arithmetic Operators:
 +  -  *  /  %  **  ++  --
 
-2. Comparison Operators:
-#### ==      // Equal (loose, type-converting)
-#### ===     // Strict equal (type + value)
-#### !=, !== // Not equal
-#### >, <, >=, <=
+### 2. Comparison Operators:
+-  ==      // Equal (loose, type-converting)
+-  ===     // Strict equal (type + value)
+-  !=, !== // Not equal
+-  >, <, >=, <=
 
-3. Logical Operators:
+### 3. Logical Operators:
 
-#### &&  // AND
-#### ||  // OR
-#### !   // NOT
+-  &&  // AND
+-  ||  // OR
+-  !   // NOT
 
-4. Assignment Operators:
+### 4. Assignment Operators:
 
-#### =, +=, -=, *=, /=, %=
+-  =, +=, -=, *=, /=, %=
 
 ### Examples:
 
-#### let a = 10, b = "10";
++ let a = 10, b = "10";
 
-#### console.log(a == b);   // true (type conversion)
-#### console.log(a === b);  // false (strict)
-#### console.log(!true);    // false
-#### console.log(true && false); // false
++ console.log(a == b);   // true (type conversion)
++ console.log(a === b);  // false (strict)
++ console.log(!true);    // false
++ console.log(true && false); // false
 
 
 ## 🔁 Conditional Statements
