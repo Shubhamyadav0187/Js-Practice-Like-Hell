@@ -154,6 +154,39 @@ Answer: Automatic or implicit conversion of values from one data type to another
 
 
 ## 🔁 Conditional Statements
+###  if, else if, else
+
+**bold**            →  bold  
+*italic*            →  italic  
+~~strikethrough~~   →  strikethrough  
+`inline code`       →  inline code
+> blockquote        →  quote or highlight a note
+
+- Item 1
+- Item 2
+  - Subitem
+
+[Link Text](https://google.com)
+![Alt Text](https://example.com/image.png)
+
+`const name = "Shubham"`
+<pre> ```js function greet(name) { return `Hello, ${name}`; } ``` </pre>
+
+| Name     | Role      |
+|----------|-----------|
+| Shubham  | Developer |
+| Anjali   | Designer  |
+
+- [x] Task completed
+- [ ] Task not completed
+
+---
+:rocket:     
+:smile:      
+:fire:       
+:star:      
+
+
 
 
 
