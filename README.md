@@ -156,6 +156,50 @@ Answer: Automatic or implicit conversion of values from one data type to another
 ## 🔁 Conditional Statements
 ###  if, else if, else
 
+<pre>
+let marks = 85;
+
+if (marks >= 90) {
+  console.log("Grade A");
+} else if (marks >= 75) {
+  console.log("Grade B");
+} else {
+  console.log("Grade C");
+}
+
+</pre>
+
+### ✅ switch Statement
+<pre>
+let fruit = "apple"
+
+switch(fruit){
+    case "apple":
+      console.log("red fruit");
+      break;
+    case "banana":
+      console.log("yellow fruit")
+      break;
+    default:
+      console.log("unknown fruit")
+}
+</pre>
+---
+
+# JavaScript Functions (Normal, Arrow, Default, Rest, Callback)
+
+## 📌 1. What is a Function?
+A function is a reusable block of code that performs a specific task.
+
+<pre>
+function greet() {
+  console.log("Hello!");
+}
+greet(); // Hello!
+
+</pre>
+
+
 **bold**            →  bold  
 *italic*            →  italic  
 ~~strikethrough~~   →  strikethrough  
@@ -185,6 +229,9 @@ Answer: Automatic or implicit conversion of values from one data type to another
 :smile:      
 :fire:       
 :star:      
+
+
+
 
 
 
