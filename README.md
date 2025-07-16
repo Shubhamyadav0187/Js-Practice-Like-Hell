@@ -15,7 +15,7 @@ JavaScript is a high-level, interpreted scripting language used to make web page
 
 ## ⚙️ 2. How JavaScript Runs in the Browser
 
-## 🧩 JS Engine Workflow:
+### 🧩 JS Engine Workflow:
 Parsing: Code is parsed to AST (Abstract Syntax Tree)
 Compilation: Modern engines like V8 just-in-time compile the code
 Execution: Executes optimized machine code
@@ -52,6 +52,47 @@ Single-threaded	- One instruction at a time,
 Asynchronous - Handles tasks without waiting,
 DOM	Document - Object Model,
 Event Loop - Manages async operations
+
+
+# ✅ Variables, Data Types & Type Conversion
+
+## 📍 1. Variables in JavaScript
+Variables are containers for storing data.
+✅ Ways to Declare Variables:
+🔹var name = "Shubham"; // Function-scoped
+🔹let age = 22;         // Block-scoped
+🔹const PI = 3.14;      // Block-scoped, cannot be reassigned
+
+## 🧃 2. Rules for Naming Variables
+🔹Can contain letters, digits, underscores, $
+🔹Cannot start with a number
+🔹Case-sensitive (name and Name are different)
+🔹No JS reserved words like let, if, class
+
+## 🔍 3. JavaScript Data Types
+### 🔹 Primitive Types (immutable)
+🔹Type	Example
+🔹String	"hello"
+🔹Number	123, 3.14
+🔹Boolean	true, false
+🔹Null	null
+🔹Undefined	undefined
+🔹Symbol	Symbol('id')
+🔹BigInt	12345678901234567890n
+
+### 🔸 Non-Primitive (Reference) Types
+🔹Objects: { name: "Shubham" }
+🔹Arrays: [1, 2, 3]
+🔹Functions: function() {}
+
+
+## 📥 4. typeof Operator
+🔹console.log(typeof "Hello"); // string
+🔹console.log(typeof 42);      // number
+🔹console.log(typeof null);    // 🔥 "object" (quirk in JS)
+
+
+
 
 
 
