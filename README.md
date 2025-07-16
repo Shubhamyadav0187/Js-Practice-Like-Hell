@@ -53,16 +53,19 @@ Asynchronous - Handles tasks without waiting,
 DOM	Document - Object Model,
 Event Loop - Manages async operations
 
+---
+
 
 # ✅ Variables, Data Types & Type Conversion
 
 ## 📍 1. Variables in JavaScript
 ### Variables are containers for storing data.
 ✅ Ways to Declare Variables:
-1. var name = "Shubham"; // Function-scoped
-2. let age = 22;         // Block-scoped
-3. const PI = 3.14;      // Block-scoped, cannot be reassigned
-
+<pre>
+ var name = "Shubham"; // Function-scoped
+ let age = 22;         // Block-scoped
+ const PI = 3.14;      // Block-scoped, cannot be reassigned
+</pre>
 ## 🧃 2. Rules for Naming Variables
 1. Can contain letters, digits, underscores, $
 2. Cannot start with a number
@@ -72,34 +75,42 @@ Event Loop - Manages async operations
 ## 🔍 3. JavaScript Data Types
 ### 🔹 Primitive Types (immutable)
 
-1. String	"hello"
-2. Number	123, 3.14
-3. Boolean	true, false
-4. Null	null
-5. Undefined	undefined
-6. Symbol	Symbol('id')
-7. BigInt	12345678901234567890n
+<pre>
+ String	"hello"
+ Number	123, 3.14
+ Boolean	true, false
+ Null	null
+ Undefined	undefined
+ Symbol	Symbol('id')
+ BigInt	12345678901234567890n
 
+</pre>
 ### 🔸 Non-Primitive (Reference) Types
-1. Objects: { name: "Shubham" }
-2. Arrays: [1, 2, 3]
-3. Functions: function() {}
+<pre>
+ Objects: { name: "Shubham" }
+ Arrays: [1, 2, 3]
+ Functions: function() {}
 
+</pre>
 
 ## 📥 4. typeof Operator
-1. console.log(typeof "Hello"); // string
-2. console.log(typeof 42);      // number
-3. console.log(typeof null);    // 🔥 "object" (quirk in JS)
+<pre>
+ console.log(typeof "Hello"); // string
+ console.log(typeof 42);      // number
+ console.log(typeof null);    // 🔥 "object" (quirk in JS)
 
+</pre>
 
 ## 🔄 5. Type Conversion
 ### ✅ Implicit Type Coercion
 #### JS automatically converts types in some expressions.
 
-1. console.log("5" + 1);     // "51" (number → string)
-2. console.log("5" - 1);     // 4    (string → number)
-3. console.log(true + 1);    // 2    (true → 1)
+<pre>
+ console.log("5" + 1);     // "51" (number → string)
+ console.log("5" - 1);     // 4    (string → number)
+ console.log(true + 1);    // 2    (true → 1)
 
+</pre>
 ### 🧪 Explicit Type Conversion
 ## Use functions to convert manually:
 
@@ -121,37 +132,44 @@ Answer:
 
 ## 🔸 Q3: What is type coercion?
 Answer: Automatic or implicit conversion of values from one data type to another.
+---
 
 # Operators & Control Flow
 ## 🔢 JavaScript Operators
 ### 1. Arithmetic Operators:
-+  -  *  /  %  **  ++  --
+` +  -  *  /  %  **  ++  -- `
 
 ### 2. Comparison Operators:
--  ==      // Equal (loose, type-converting)
--  ===     // Strict equal (type + value)
--  !=, !== // Not equal
--  >, <, >=, <=
+<pre>
+  ==      // Equal (loose, type-converting)
+  ===     // Strict equal (type + value)
+  !=, !== // Not equal
+  >, <, >=, <=
 
+</pre>
 ### 3. Logical Operators:
 
--  &&  // AND
--  ||  // OR
--  !   // NOT
+ <pre>
+  &&  // AND
+  ||  // OR
+  !   // NOT
+ </pre>
 
 ### 4. Assignment Operators:
 
--  =, +=, -=, *=, /=, %=
+`  =, +=, -=, *=, /=, %= `
 
 ### Examples:
 
-+ let a = 10, b = "10";
+<pre>
+let a = 10, b = "10"
 
-+ console.log(a == b);   // true (type conversion)
-+ console.log(a === b);  // false (strict)
-+ console.log(!true);    // false
-+ console.log(true && false); // false
+console.log(a == b);   // true (type conversion)
+console.log(a === b);  // false (strict)
+console.log(!true);    // false
+console.log(true && false); // false
 
+</pre>
 
 ## 🔁 Conditional Statements
 ###  if, else if, else
@@ -198,6 +216,7 @@ function greet() {
 greet(); // Hello!
 
 </pre>
+
 
 
 **bold**            →  bold  
