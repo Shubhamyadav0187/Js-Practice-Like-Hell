@@ -92,10 +92,68 @@ Event Loop - Manages async operations
 3. console.log(typeof null);    // 🔥 "object" (quirk in JS)
 
 
+## 🔄 5. Type Conversion
+### ✅ Implicit Type Coercion
+#### JS automatically converts types in some expressions.
+
+1. console.log("5" + 1);     // "51" (number → string)
+2. console.log("5" - 1);     // 4    (string → number)
+3. console.log(true + 1);    // 2    (true → 1)
+
+### 🧪 Explicit Type Conversion
+## Use functions to convert manually:
+
+1. Number("123");      // 123
+2. String(456);        // "456"
+3. Boolean(0);         // false
+4. parseInt("42px");   // 44
+
+# 🧠 Interview Questions
+## 🔸 Q1: What’s the difference between let, const, and var?
+Answer: 
+1. var: function-scoped, hoisted, can be redeclared.
+2. let: block-scoped, not hoisted to initialization.
+3. const: block-scoped, can't be reassigned.
+
+## 🔸 Q2: What is the difference between undefined and null?
+1. undefined: Default value for unassigned variables, Set by JavaScript	I
+2. null: Intentional absence of value, Set by developer
+
+## 🔸 Q3: What is type coercion?
+Answer: Automatic or implicit conversion of values from one data type to another.
+
+# Operators & Control Flow
+## 🔢 JavaScript Operators
+1. Arithmetic Operators:
++  -  *  /  %  **  ++  --
+
+2. Comparison Operators:
+#### ==      // Equal (loose, type-converting)
+#### ===     // Strict equal (type + value)
+#### !=, !== // Not equal
+#### >, <, >=, <=
+
+3. Logical Operators:
+
+#### &&  // AND
+#### ||  // OR
+#### !   // NOT
+
+4. Assignment Operators:
+
+#### =, +=, -=, *=, /=, %=
+
+### Examples:
+
+#### let a = 10, b = "10";
+
+#### console.log(a == b);   // true (type conversion)
+#### console.log(a === b);  // false (strict)
+#### console.log(!true);    // false
+#### console.log(true && false); // false
 
 
-
-
+## 🔁 Conditional Statements
 
 
 
