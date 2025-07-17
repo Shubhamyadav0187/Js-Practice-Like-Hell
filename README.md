@@ -21,16 +21,20 @@ Compilation: Modern engines like V8 just-in-time compile the code
 Execution: Executes optimized machine code
 
 ## 🚀 Popular JS Engines:
-Browser	JS Engine
-Chrome - V8, Firefox-SpiderMonkey Safari-JavaScriptCore, Edge-Chakra (now uses V8)
+|Browser	| JS Engine  |        
+|-----------|------------|
+|Chrome     | V8         |
+|Firefox    |SpiderMonkey|
+|Safari    |JavaScriptCore| 
+|Edge-Chakra |(now uses V8)|
 
 
 ## 🧵 3. JS is Single-threaded & Non-blocking
 
-Single-threaded: Runs one task at a time.
-Non-blocking: Uses the event loop to handle tasks like fetching data asynchronously.
+- Single-threaded: Runs one task at a time.
+- Non-blocking: Uses the event loop to handle tasks like fetching data asynchronously.
 
-📌 Event Loop ensures JS handles multiple operations efficiently without blocking the UI.
+### 📌 Event Loop ensures JS handles multiple operations efficiently without blocking the UI.
 
 
 
@@ -46,12 +50,7 @@ Answer: JS uses a single main thread to run code but offloads tasks like timers,
 Answer: The JS engine parses, compiles (JIT), and executes code. It manages memory and executes JavaScript instructions efficiently.
 
 ## 🧠 Flashcards (Revise Daily)
-Term Meaning
-JS Engin - Converts JS code to machine code, 
-Single-threaded	- One instruction at a time, 
-Asynchronous - Handles tasks without waiting,
-DOM	Document - Object Model,
-Event Loop - Manages async operations
+> JS Engin - Converts JS code to machine code, Single-threaded	- One instruction at a time, Asynchronous - Handles tasks without waiting, DOM	Document - Object Model,Event Loop - Manages async operations
 
 ---
 
@@ -204,9 +203,9 @@ switch(fruit){
 </pre>
 ---
 
-# JavaScript Functions (Normal, Arrow, Default, Rest, Callback)
+#  ** JavaScript Functions (Normal, Arrow, Default, Rest, Callback) **
 
-## 📌 1. What is a Function?
+## 📌** 1. What is a Function? **
 A function is a reusable block of code that performs a specific task.
 
 <pre>
@@ -217,8 +216,103 @@ greet(); // Hello!
 
 </pre>
 
+## ✍️** 2. Function Types **
+### ✅ a. Function Declaration
+<pre>
+function add(a, b) {
+  return a + b;
+}
+</pre>
+>✅ Hoisted (can be called before declaration)
+
+### ✅ b. Function Expression
+<pre>
+const subtract = function(a, b) {
+  return a - b;
+};
+</pre>
+>🚫 Not hoisted
+
+### ✅ c. Arrow Functions (ES6+)
+<pre>
+const multiply = (a, b) => a * b;
+const greet = () => console.log("Hi!");
+</pre>
+> 💡 Shorter syntax, but: No own this, Cannot be used as constructors
+
+## ⚙️ 3. Default Parameters
+<pre>
+function greet(name = "Guest") {
+  console.log("Hello", name);
+}
+greet();        // Hello Guest
+greet("Shubham");// Hello Shubham
+
+</pre>
+
+## 🔢 4. Rest Parameters (...args)
+Use to accept multiple arguments as an array:
+<pre>
+function sum(...numbers) {
+  return numbers.reduce((total, num) => total + num);
+}
+console.log(sum(1, 2, 3, 4)); // 10
+
+</pre>
+
+## 🔁 5. Callback Functions
+A callback is a function passed as an argument to another function.
+
+<pre>
+function greetUser(name, callback) {
+  console.log("Hello", name);
+  callback();
+}
+
+function sayBye() {
+  console.log("Bye!");
+}
+
+greetUser("Shubham", sayBye);
+// Hello Shubham
+// Bye!
+
+</pre>
+> Used in: - Events, - setTimeout, - APIs, - Functional programming
+
+# 🧠 Interview Questions
+
+## 🔸 Q1: What is the difference between function declaration and function expression?
+
+### Answer: 
+- Declaration is hoisted; expression is not.
+- Declaration uses function, expression can use const.
+
+## 🔸 Q2: Why arrow functions can’t use this?
+### Answer:
+- Arrow functions do not have their own this; they inherit  this from the parent scope.
+
+## 🔸 Q3: What are default and rest parameters?
+### Answer:
+- Default: Assigns a value if none provided
+- Rest: Packs multiple arguments into a single array
+
+---
+
+# ✅ Scope, Hoisting & Closures
+## 🔒 1. Scope in JavaScript
+Scope determines where a variable can be accessed in code.
+### ✅ Types of Scope:
+
+| Type            |      Example                           |
+| ---------------------- | --------------------------------- |
+| Global Scope           | Accessible everywhere             |
+| Local (Function) Scope | Inside functions only             |
+| Block Scope            | Inside `{}` (with `let`, `const`) |
 
 
+
+<pre></pre>
 **bold**            →  bold  
 *italic*            →  italic  
 ~~strikethrough~~   →  strikethrough  
