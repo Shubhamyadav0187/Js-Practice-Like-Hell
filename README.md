@@ -310,9 +310,470 @@ Scope determines where a variable can be accessed in code.
 | Local (Function) Scope | Inside functions only             |
 | Block Scope            | Inside `{}` (with `let`, `const`) |
 
+<pre>
+let a = 10; // Global scope
+
+function test() {
+  let b = 20; // Function scope
+  if (true) {
+    let c = 30; // Block scope
+    console.log(a, b, c); // ✅ OK
+  }
+  // console.log(c); ❌ Error
+}
+test();
+
+</pre>
+
+## 🪄 2. Hoisting in JavaScript
+Hoisting is JavaScript’s behavior of moving declarations to the top of the scope.
+
+### ✅ Hoisted:
+- var (initialized as undefined)
+- Function Declarations
+
+### ❌ Not Hoisted:
+- let, const (in Temporal Dead Zone)
+- Function Expressions / Arrow Functions
+
+<pre>
+console.log(x);   // undefined
+var x = 5;
+
+greet();          // Hello
+function greet() {
+  console.log("Hello");
+}
+
+// ❌ Not hoisted properly
+console.log(y);   // ReferenceError
+let y = 10;
+
+</pre>
+
+## 🔁 3. Closures (Very Important)
+A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives a function access to its outer scope. In JavaScript, closures are created every time a function is created, at function creation time.
+
+<pre>
+function init() {
+  var name = "Mozilla"; // name is a local variable created by init
+  function displayName() {
+    // displayName() is the inner function, that forms a closure
+    console.log(name); // use variable declared in the parent function
+  }
+  displayName();
+}
+init();
+
+</pre>
+
+> 🧠 Real Use Cases of Closures
+>Private variables
+>Memoization
+>Function factories
+>Event handlers
+
+# ❓ Interview Questions
+## 🔸 Q1: What is scope?
+Answer: Scope determines where variables are accessible in your code — global, function, or block scope.
+
+## 🔸 Q2: What is hoisting?
+Answer: JavaScript's behavior of moving declarations to the top of their scope before execution. var and function declarations are hoisted.
+
+## 🔸 Q3: What is a closure?
+Answer: A closure is when a function retains access to its outer lexical scope even after the outer function has finished executing.
 
 
-<pre></pre>
+---
+
+# ✅ Arrays Deep Dive in JavaScript 
+
+## 📦 1. Array Basics
+<pre>
+let fruits = ["apple", "banana", "mango"];
+let numbers = [1, 2, 3, 4];
+
+</pre>
+>You can access items by index:
+<pre>
+console.log(fruits[0]); // apple
+</pre>
+
+## 🔁 2. Looping through Arrays
+### ✅ Using forEach()
+
+<pre>
+fruits.forEach(function(fruit) {
+  console.log(fruit);
+});
+
+</pre>
+>➡️ Executes a callback for each item (does not return a new array).
+
+## 🧠 3. map() – Transform Each Element
+
+<pre>
+const nums = [1, 2, 3];
+
+const doubled = nums.map(num => num * 2);
+console.log(doubled); // [2, 4, 6]
+
+</pre>
+>➡️ Returns a new array with modified elements. Does not mutate the original array.
+
+## 🧹 4. filter() – Filter Based on Condition
+ 
+<pre>
+const nums = [1, 2, 3, 4, 5];
+
+const even = nums.filter(num => num % 2 === 0);
+console.log(even); // [2, 4]
+
+</pre>
+>➡️ Returns a new array with only elements that satisfy the condition.
+
+## 📉 5. reduce() – Reduce to One Value
+<pre>
+const nums = [1, 2, 3, 4];
+
+const total = nums.reduce((acc, curr) => acc + curr, 0);
+console.log(total); // 10
+
+</pre>
+>➡️ Reduces the array to a single value (sum, product, etc.)
+
+## ✅ 6. some() – At Least One is True
+
+<pre>
+const nums = [1, 3, 5];
+
+const hasEven = nums.some(num => num % 2 === 0);
+console.log(hasEven); // false
+
+</pre>
+
+## ✅ 7. every() – All Must Be True
+<pre>
+const nums = [2, 4, 6];
+
+const allEven = nums.every(num => num % 2 === 0);
+console.log(allEven); // true
+
+</pre>
+>➡️ Returns true only if all elements pass the condition.
+
+# 🧠 Interview Questions
+### 🔸 Q1: What’s the difference between map and forEach?
+### Answer:
+- map returns a new array; forEach returns undefined.
+- map is used when transformation is needed.
+
+### 🔸 Q2: When would you use reduce()?
+### Answer: 
+- When you need a single value from an array (sum, average, flattening, etc.)
+
+
+# ✅ Strings, Template Literals & String Methods
+## 📚 1. What is a String?
+A string is a sequence of characters surrounded by quotes.
+<pre>
+let name1 = "Shubham";
+let name2 = 'Yadav';
+let name3 = `Hello`; // Template literal
+
+</pre>
+>✅ Strings are immutable → You can't change a character directly like an array.
+
+## 🧵 2. Template Literals (Backticks)
+### Use ` ` to:
+- Embed variables
+- Write multi-line strings
+
+<pre>
+let name = "Shubham ";
+let greet = `Hello, ${name}`;
+
+console.log(greet); // Hello, Shubham
+</pre>
+
+## 🛠️ 3. Useful String Methods
+Here’s a table of the most useful and interview-relevant ones:
+
+
+
+
+| Method                  | Description                               |
+| ----------------------- | ----------------------------------------- |
+| `length`                | Returns length of string                  |
+| `toUpperCase()`         | Convert to uppercase                      |
+| `toLowerCase()`         | Convert to lowercase                      |
+| `trim()`                | Removes spaces from both ends             |
+| `slice(start, end)`     | Extract part of string                    |
+| `substring(start, end)` | Similar to slice, but no negative index   |
+| `replace(old, new)`     | Replaces first match                      |
+| `replaceAll()`          | Replaces all occurrences                  |
+| `includes()`            | Checks if substring exists                |
+| `indexOf()`             | Returns index of first occurrence         |
+| `split()`               | Converts string to array                  |
+| `startsWith()`          | Checks if string starts with given string |
+| `endsWith()`            | Checks if ends with something             |
+| `charAt(index)`         | Returns character at index                |
+
+
+## 🔍 4. String Method Examples
+
+<pre>
+let str = "  JavaScript is Awesome!  ";
+
+console.log(str.length);              // 27
+console.log(str.trim());              // "JavaScript is Awesome!"
+console.log(str.toUpperCase());       // "  JAVASCRIPT IS AWESOME!  "
+console.log(str.includes("Awesome")); // true
+console.log(str.slice(2, 13));        // "JavaScript"
+console.log(str.split(" "));          // [ '', '', 'JavaScript', 'is', 'Awesome!', '', '' ]
+console.log(str.replace("Awesome", "Great")); // "  JavaScript is Great!  "
+
+</pre>
+
+
+# ✅ Loops in JavaScript (for, while, for...of, forEach, break, continue)
+
+## 🔁 1. Why Use Loops?
+To repeat a block of code multiple times automatically.
+
+## 🔢 2. for Loop (Classic)
+<pre>
+for (let i = 0; i < 5; i++) {
+  console.log(i);
+}
+// Output: 0 1 2 3 4
+
+
+</pre>
+>✅ Used when you know how many times you want to repeat.
+
+## 🔄 3. while Loop
+<pre>
+let i = 0;
+while (i < 5) {
+  console.log(i);
+  i++;
+}
+
+</pre>
+>✅ Used when number of iterations is unknown initially.
+
+## 🔂 4. do...while Loop
+<pre>
+let i = 0;
+do {
+  console.log(i);
+  i++;
+} while (i < 5);
+
+</pre>
+>✅ Runs at least once even if condition is false at start.
+
+## 📦 5. for...of Loop (ES6+)
+<pre>
+let colors = ["red", "green", "blue"];
+for (let color of colors) {
+  console.log(color);
+}
+
+</pre>
+>✅ Used for iterating arrays, strings, maps, sets.
+
+## 🧩 6. forEach() Method
+<pre>
+let nums = [1, 2, 3];
+nums.forEach(function(num) {
+  console.log(num);
+});
+
+</pre>
+>✅ Executes a function for each element (array only), can’t break/return.
+
+## 🧠 7. break and continue
+🔸 break – exits the loop
+<pre>
+for (let i = 1; i <= 5; i++) {
+  if (i === 3) break;
+  console.log(i);
+}
+// Output: 1 2
+
+</pre>
+
+🔸 continue – skips to next iteration
+<pre>
+for (let i = 1; i <= 5; i++) {
+  if (i === 3) continue;
+  console.log(i);
+}
+// Output: 1 2 4 5
+
+</pre>
+
+# ❓ Interview Questions
+## Q1: Difference between for...of and forEach()?
+### Answer:
+- forEach() → method for arrays, can’t use break/continue
+- for...of → works on arrays, strings, and supports break/continue
+
+## Q2: Which loop to use when?
+| Use Case          | Best Loop   |
+| ----------------- | ----------- |
+| Known iteration   | `for`       |
+| Unknown iteration | `while`     |
+| Read from array   | `for...of`  |
+| Functional style  | `forEach()` |
+
+
+---
+
+# ✅ JavaScript Objects (Deep Dive + Interview Qs)
+
+## 📦 1. What is an Object?
+An object is a collection of key-value pairs. Keys are strings (or Symbols), and values can be anything.
+
+<pre>
+const person = {
+    name: "Shubham",
+    age: 22,
+    isStudent; true
+};
+</pre>
+
+## 🧠 2. Accessing Object Properties
+<pre>
+console.log(person.name);     // "Shubham"
+console.log(person["age"]);  // 22
+
+</pre>
+#### ✅ Use dot . or bracket [] notation
+#### ✅ [] required when:
+- Key is stored in variable
+- Key has spaces or special chars
+
+## ✍️ 3. Modifying / Adding / Deleting Properties
+<pre>
+person.city = "Bhopal";        // Add
+person.age = 23;               // Modify
+delete person.isStudent;       // Delete
+
+</pre>
+
+## 📌 4. Looping Through Objects
+✅ for...in – to loop through keys
+<pre>
+for (let key in person) {
+  console.log(key, person[key]);
+}
+</pre>
+
+## 🔎 5. Useful Object Methods
+| Method                | Use                               |
+| --------------------- | --------------------------------- |
+| `Object.keys(obj)`    | Array of all keys                 |
+| `Object.values(obj)`  | Array of all values               |
+| `Object.entries(obj)` | Array of key-value pairs          |
+| `hasOwnProperty(key)` | Checks if object has the property |
+
+🔹 Example:
+<pre>
+const obj = { a: 1, b: 2, c: 3 };
+
+console.log(Object.keys(obj));     // ['a', 'b', 'c']
+console.log(Object.values(obj));   // [1, 2, 3]
+console.log(Object.entries(obj));  // [['a', 1], ['b', 2], ['c', 3]]
+
+console.log(obj.hasOwnProperty("b")); // true
+
+</pre>
+
+# ✅ Functions as First-Class Citizens, Higher-Order Functions & Callbacks
+
+## 🚀 1. Functions as First-Class Citizens
+### In JavaScript:
+- You can store functions in variables
+- Pass them as arguments
+- Return them from other functions
+This makes JS a functional programming language.
+✅ Example:
+<pre>
+function greet() {
+  return "Hello!";
+}
+
+let sayHi = greet;  // assigning function
+console.log(sayHi()); // Hello!
+
+</pre>
+
+## 🔁 2. Higher-Order Functions (HOF)
+A higher-order function is:
+- A function that takes another function as an argument, or
+- Returns a function
+#### ✅ Example 1: Passing a function (callback)
+
+<pre>
+function greet(name) {
+  console.log("Hello", name);
+}
+
+function processUser(callback) {
+  const userName = "Shubham";
+  callback(userName);
+}
+
+processUser(greet); // Hello Shubham
+
+</pre>
+
+✅ Example 2: Returning a function
+<pre>
+function multiplier(factor) {
+  return function (num) {
+    return num * factor;
+  };
+}
+
+const double = multiplier(2);
+console.log(double(5)); // 10
+
+</pre>
+
+## 📞 3. Callback Functions
+A callback is a function passed into another function to be executed later.
+
+#### ✅ Example:
+
+<pre>
+function fetchData(callback) {
+  setTimeout(() => {
+    console.log("Data fetched");
+    callback();
+  }, 1000);
+}
+
+fetchData(() => {
+  console.log("Callback executed");
+});
+
+</pre>
+
+✅ Widely used in:
+- Event handling
+- API calls
+- setTimeout, setInterval
+
+
+
+
+<pre>
+
+</pre>
 **bold**            →  bold  
 *italic*            →  italic  
 ~~strikethrough~~   →  strikethrough  
