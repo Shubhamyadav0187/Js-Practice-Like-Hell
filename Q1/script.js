@@ -1,4 +1,192 @@
+// Array Question
+
+// let arr = [1,6,3,4,2]
+// let max = arr[0]
+//  for(i=1;i<arr.length;i++){
+//   if(max<arr[i]){
+//     max=arr[i]
+//   }
+//  }
+//  console.log(max);
+ 
+// for(i=1; i<=3; i++){
+//    let temp = arr[arr.length-1]
+
+//    for(let i = arr.length-1; i>0; i--){
+//   arr[i]=arr[i-1]
+//   arr[i-1]=temp
+//   }
+// }
+
+// console.log(arr);
+
+// function secondLargest(arr){
+//   let first = -1;
+//   let second = -1;
+//   for(let num of arr){
+//     if(num>first){
+//       second = first;
+//       first = num;
+//     }else if(num>second && num < first){
+//       second = num
+//     }
+//   }
+// console.log(second);
+
+// }
+// secondLargest([1,-11,11,2,-3,4,5]);
+
+
+
+
+
+
+
+
+//flatten array 
+
+// function flatten(array){
+//   let stack = [...array];
+//   let result = []
+
+//   while(stack.length){
+//     let next = stack.pop()
+//     if(Array.isArray(next)){
+//       stack.push(...next)
+//     }else{
+//       result.push(next)
+//     }
+
+//   }
+//   return result.reverse()
+// }
+
+// console.log(flatten([1,[2,3,4],5,[6]]));
+
+
+
+
+// remove duplicate element from array
+let arr = [1,2,2,3,4,4,4,5]
+let newarr = arr.filter((val,i)=> arr.indexOf(val)=== i)
+console.log(newarr);
+
+
+// let ans = arr.map((val)=>{
+//      return val*val
+// })
+// console.log(ans);
+// console.log("Start");
+
+// setTimeout(() => console.log("Timeout"), 0);
+
+// Promise.resolve().then(() => console.log("Promise"));
+
+// console.log("End");
+// const obj = {
+//   name: "Shubham",
+//   greet: function() {
+//     console.log(this.name);
+//   }
+// };
+
+// const greetFn = obj.greet();
+// greetFn(); // ?
+// obj.greet(); // ?
+
+// async function test() {
+//   return "Hello";
+// }
+// console.log(test());
+
+
+// let i = 0;
+// let temp;
+
+//     for(let j=arr.length-1; j>=i ; j--){
+//         temp = arr[i];
+//         arr[i]=arr[j];
+//         arr[j]=temp
+//         i++
+        
+//     }
+//    console.log(arr);
+
+
+// let arr = [1,2,3,4]
+
+// let ans = arr.reduce((acc, curr)=>acc-curr,0)
+// console.log(ans);
+// console.log(arr);
+
+// let fruits = ['red', 'green', 'blue']
+// let answer = fruits.map((val)=> {
+//     return val.charAt(0).toUpperCase() + val.slice(1)
+// })
+// console.log(answer);
+
+// for(let val in fruits){
+//     console.log(val, fruits[val]);
+    
+// }
+
+// let ans = fruits.forEach((val, index)=>{
+//     console.log(val, index);
+    
+// })
+// console.log(ans);
+
+// for(let val of fruits){
+//     console.log(val);
+    
+// }
+
+// let name = "shubham"
+// for(let val of name){
+//     console.log(val);
+    
+// }
+
+// let obj = {
+//     name: "shubham",
+//     age: 25
+// }
+// for(let val in obj){
+//     console.log(val, obj[val]);
+    
+// }
+
 // *****************************************************Project1
+
+
+
+
+// function greet(name){
+//     console.log(name);
+    
+// }
+
+// function higherorderfunction(callback){
+//     let user = "shubham"
+//     callback(user)
+// }
+
+
+// higherorderfunction(greet)
+
+// function greet(name) {
+//   console.log("Hello", name);
+// }
+
+// function processUser(callback) {
+//   const userName = "Shubham";
+//   callback(userName);
+// }
+// processUser(greet)
+
+
+
+
 
 // let h1 = document.querySelector("h1")
 
