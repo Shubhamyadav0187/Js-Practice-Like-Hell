@@ -1,3 +1,214 @@
+// "use strict"
+// OOP
+
+// function Person(name){
+//     this.name = name
+// }
+
+// Person("shubham");
+// console.log(window.name);
+
+
+
+// function Person(name){
+//     let secret = "mysecret";
+//     this.name = name;
+//     this.getSecret = function(){
+//         return secret;
+//     };
+// }
+
+// const p = new Person("shubham")
+// console.log(p.name);
+// console.log(p.secret);
+// console.log(p.getSecret());
+
+
+// function Person(name,age){
+//     this.name = name
+//     this.age = age
+//     this.introduce = function(){
+//        return  `hi my name is ${this.name} and im ${age} year old`
+    
+//     }
+// }
+// const p = new Person("shubham", 23);
+// console.log(p.introduce());
+// async function getData(){
+//     try {
+//         let res = await fetch("url");
+//         let data = await res.json();
+
+
+//     }catch(err){
+//         console.log("error", err);
+        
+
+//     }
+// }
+
+
+
+
+
+
+// let arr = [1,2,5];
+
+// function sumArr(arr){
+//    let sum =  arr.reduce((acc,cur) => acc+cur)
+//    console.log(sum);
+
+// }
+// sumArr(arr);
+  
+// let sum = 0;
+// for(let num of arr){
+//     sum += num
+// }
+// console.log(sum);
+
+
+// function fibonacci(n){
+//     let sequence = [0,1];
+//     for(let i = 2; i<=n; i++){
+//         sequence.push(sequence[i-1] + sequence[i-2]);
+//     }
+//     return sequence.slice(0,n)
+// }
+// console.log(fibonacci(4));
+
+function recursiveFib(n){
+    if(n<=1) return n;
+    return recursiveFib(n-1) + recursiveFib(n-2)
+}
+
+function printFibonaci(n){
+    let num = []
+    for(let i=0; i<=n; i++){
+
+       num.push(recursiveFib(i))
+
+    }
+  console.log(num);
+  
+    
+}
+printFibonaci(5)
+// console.log(fibo);
+
+
+
+
+
+
+
+// fetch("url")
+//    .then(res => res.json())
+//    .then(err => console.log("Error:", err));
+
+
+//    let promise = new Promise((resolve, reject) =>{
+//     setTimeout(()=>{
+       
+//         resolve("done")
+       
+//     },1000)
+//    })
+
+// promise.then(result => console.log(result))
+// function Myarr(){
+//     this.length = 0
+// }
+// Myarr.prototype.push = function(value){
+//     this[this.length]=value
+//     this.length++;
+//     return this.length
+// }
+
+// Myarr.prototype.pop = function(){
+//     if(this.length===0) return undefined;
+//     const value = this[this.length-1]
+//     delete this[this.length-1];
+//     this.length--;
+//     return value;
+    
+// }
+// const arr = new Myarr()
+// console.log(arr.push(10));
+// console.log(arr.push(12));
+// console.log(arr.pop());
+// console.log(arr.length);
+
+// const arr = [1,,3,3,5,5,4,4,4,2,2]
+
+// let largest = arr[0];
+// let secondLargest = arr[1]
+// for(let i = 0; i<=arr.length-1; i++){
+//     if(arr[i]>largest){
+//         largest=arr[i];
+//     }
+// }
+// console.log(largest);
+
+
+
+
+
+
+
+
+// function secondLargest(arr){
+//     let first = -1;
+//     let second = -1;
+//     for(let num of arr){
+//         if(num>first){
+//             second = first;
+//             first=num;
+
+//         }else if(num>second && num<first){
+//             second = num
+//         }
+//     }
+//     console.log(second);
+    
+// }
+// secondLargest(arr)
+
+// function reverseString(str) {
+//   let original = str;
+//   let reversed = "";
+//   for (let i = str.length - 1; i >= 0; i--) {
+//     reversed += str[i];
+//   }
+//   if(original === reversed) return true;
+//   else return false
+// }
+
+// console.log(reverseString("shshs"));
+
+
+
+
+// function fact(num){
+//     let fact = 1;
+//     for(let i = num; i>=1; i--){
+//         fact = fact*i
+//     }
+//     return fact
+// }
+// console.log(fact(3));
+
+
+
+
+
+
+
+// const haseven = num.every(num => num%2 === 0);
+// console.log(haseven);
+//  const red = num.reduce((acc, cur)=> acc+cur,0);
+// console.log(red);
+
 // Array Question
 
 // let arr = [1,6,3,4,2]
@@ -19,6 +230,9 @@
 // }
 
 // console.log(arr);
+
+
+
 
 // function secondLargest(arr){
 //   let first = -1;
@@ -67,10 +281,11 @@
 
 
 // remove duplicate element from array
-let arr = [1,2,2,3,4,4,4,5]
-let newarr = arr.filter((val,i)=> arr.indexOf(val)=== i)
-console.log(newarr);
+// let arr = [1,2,2,3,4,4,4,5]
+// let newarr = arr.filter((val,i)=> arr.indexOf(val)=== i)
+// console.log(newarr);
 
+// console.log([]==![]);
 
 // let ans = arr.map((val)=>{
 //      return val*val

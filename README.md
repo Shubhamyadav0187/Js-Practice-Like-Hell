@@ -772,8 +772,20 @@ fetchData(() => {
 
 
 <pre>
-
+async function getUser(){
+  return "Shubham"
+}
+getUser().then(res => console.log(res))
 </pre>
+
+# 🔹 Advanced Interview Questions on Promises
+
+### Difference between callbacks and promises?
+### What are promise states?
+### Difference between .then().catch() vs try...catch with async/await?
+### What is Promise.all, Promise.race, Promise.allSettled, Promise.any?
+### Can you explain microtask queue in relation to promises?
+### Why are promises better than nested callbacks (callback hell)?
 **bold**            →  bold  
 *italic*            →  italic  
 ~~strikethrough~~   →  strikethrough  
