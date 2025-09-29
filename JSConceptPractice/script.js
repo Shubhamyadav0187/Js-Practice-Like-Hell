@@ -946,3 +946,22 @@ let sure = confirm("Are you sure you want to proceed")
 // let deepcopy = JSON.parse(JSON.stringify(book))
 // console.log(deepcopy);
 
+
+
+
+// ToUpperCase to LowerCase
+
+// function toUpperCase(str){
+//     let result = " "
+//     for(let i=0; i<str.length; i++){
+//         if(str.charCodeAt(i)>=97 && str.charCodeAt(i)<=122){
+//             result = result + String.fromCharCode(str.charCodeAt(i) - 32);
+//         } else {
+//             result +=  str[i]
+//         }
+//     }
+//     return result
+    
+// }
+
+// console.log(toUpperCase("ShHiiopubA"));
