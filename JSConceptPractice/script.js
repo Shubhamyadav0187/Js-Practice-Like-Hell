@@ -8,6 +8,27 @@
 // Person("shubham");
 // console.log(window.name);
 
+const obj1 = {
+    name: "Shubham",
+    address: {
+        city: "Bhopal"
+    }
+};
+
+const shallow = {...obj1};
+const deep = structuredClone(obj1);
+const deepcopy = JSON.parse(JSON.stringify(obj1));
+
+deep.address.city = "betul";
+deepcopy.address.city = "betul";
+// shallow.address.city = "betul";
+
+
+console.log(shallow);
+console.log(deep);
+console.log(deepcopy);
+
+
 
 
 // function Person(name){
