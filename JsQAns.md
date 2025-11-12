@@ -286,4 +286,89 @@ const hold = bigData(); // closure holds reference to largeArray
 // Even if we never use it again, largeArray stays in memory
 
 ```
+----
+----
+----
 
+### 21. What are First-Class Functions?
+
+In JavaScript, function are first-class citizens, meaning they can be:
+  1. Assign to variable,
+  2. Passed as argument, and
+  3. Return from other function.
+
+
+```
+function greet(name){
+  rerturn `Hello, ${name}`;
+}
+
+// Assigned to variable
+const sayHi = greet;
+
+// Passed as argument
+function callFunction(fn){
+  console.log(fn("shubham"));
+}
+callFunction(sayHi);
+```
+
+`This allows JavaScript to treat functions like data — this is why we can have callbacks and higher-order functions.`
+
+`In functions like map(), filter(), and reduce() — we pass functions as arguments.`
+
+---
+
+### 2️2. What is a Higher-Order Function?
+
+Definition:
+A higher-order function is a function that takes another function as an argument or returns a function.
+
+````
+
+function greet(name){
+  return `Hello, ${name}`;
+}
+
+function processUserInput(callback){
+  let name = "Shubham";
+  console.log(callback(name))
+}
+
+processUserInput(greet);
+
+
+````
+
+`In-built Examples:
+map(), filter(), reduce() in JavaScript arrays are all higher-order functions.`
+
+`👉 “Can you name some higher-order functions in JavaScript?”
+✅ Array.map(), Array.filter(), Array.reduce().`
+
+---
+
+### 23. What is a Pure Function?
+
+Definition:
+A pure function is one that:
+
+Always returns the same output for the same input.
+
+Doesn’t cause side effects (doesn’t modify variables outside its scope).
+
+```
+// Pure Function
+function add(a, b) {
+  return a + b;
+}
+
+// Impure Function
+let c = 10;
+function addImpure(a) {
+  return a + c; // depends on external variable
+}
+
+```
+
+---
