@@ -372,3 +372,132 @@ function addImpure(a) {
 ```
 
 ---
+
+### 24. How do you create a Constructor Function?
+
+Definition:
+A constructor function is a special function used to create objects with similar properties and methods using the new keyword.
+
+```
+function Person(name, age){
+  this.name = name;
+  this.age = age;
+  this.greet = function(){
+    console.log(`Hi, Im ${this.name}`);
+  };
+}
+
+const user = new Person("Shubham", 27);
+
+user.greet();
+
+```
+---
+
+### 25. What is the Prototype Chain?
+
+Definition:
+Every JavaScript object has a hidden property [[Prototype]] (accessible via __proto__), which points to another object — forming a chain called the prototype chain.
+
+This chain continues until it reaches null.
+
+````
+const arr = [1, 2, 3];
+console.log(arr.__proto__ === Array.prototype); // true
+console.log(Array.prototype.__proto__ === Object.prototype); // true
+
+````
+
+
+Interview Explanation:
+`
+Prototype chain is how inheritance works in JavaScript — objects inherit properties from their prototypes.
+`
+
+
+Possible Question:
+`
+👉 “What is the end of the prototype chain?”
+✅ Object.prototype (its prototype is null).`
+
+
+---
+
+
+### 26. What is the this Keyword?
+
+Definition:
+this refers to the object that is executing the current function.
+
+Depend on context.
+
+| Context                         | Value of `this`                          |
+| ------------------------------- | ---------------------------------------- |
+| Global scope                    | `window` (in browsers)                   |
+| Inside object method            | The object itself                        |
+| Inside a function (non–strict)  | `window`                                 |
+| Inside a function (strict mode) | `undefined`                              |
+| In a class constructor          | The instance of the class                |
+| In event handler                | The HTML element that received the event |
+
+
+```
+
+const obj = {
+  name: "Shubham".
+  show: function (){
+    console.log(this.name)
+  }
+};
+
+obj.show(); //Shubham
+
+````
+----
+
+### 27. How do bind(), call(), and apply() work?
+
+They are used to manually set the value of this.
+
+
+| Method    | Description                                                | Example                       |
+| --------- | ---------------------------------------------------------- | ----------------------------- |
+| `call()`  | Calls function immediately with given `this` and arguments | `fn.call(obj, arg1, arg2)`    |
+| `apply()` | Same as `call()`, but arguments are in an array            | `fn.apply(obj, [arg1, arg2])` |
+| `bind()`  | Returns a new function with `this` bound permanently       | `const newFn = fn.bind(obj)`  |
+
+
+Example:
+
+```
+
+const person = { name: "Shubham" };
+
+function greet(age, city) {
+  console.log(`Hi ${this.name}, ${age} years old from ${city}`);
+}
+
+greet.call(person, 22, "Delhi");
+greet.apply(person, [22, "Delhi"]);
+const newGreet = greet.bind(person, 22, "Delhi");
+newGreet(); // can be called later
+
+```
+
+### 28. Difference between Shallow and Deep Copy of an Object
+
+| Type         | Description                        | Example                                                     |
+| ------------ | ---------------------------------- | ----------------------------------------------------------- |
+| Shallow Copy | Copies only first-level properties | `Object.assign({}, obj)` or `{...obj}`                      |
+| Deep Copy    | Copies nested objects too          | `structuredClone(obj)` or `JSON.parse(JSON.stringify(obj))` |
+
+```
+const obj1 = { name: "Shubham", address: { city: "Delhi" } };
+const shallow = { ...obj1 };
+const deep = structuredClone(obj1);
+
+obj1.address.city = "Mumbai";
+console.log(shallow.address.city); // Mumbai ❌ (affected)
+console.log(deep.address.city); // Delhi ✅ (not affected)
+
+```
