@@ -501,3 +501,48 @@ console.log(shallow.address.city); // Mumbai ❌ (affected)
 console.log(deep.address.city); // Delhi ✅ (not affected)
 
 ```
+### 29. How do you merge two objects?
+
+1. Using the Spread Operator (...)
+
+Most modern and preferred method.
+
+```const obj1 = { a: 1, b: 2 };
+const obj2 = { b: 3, c: 4 };
+
+const merged = { ...obj1, ...obj2 };
+console.log(merged); 
+
+Output: { a: 1, b: 3, c: 4 }
+
+```
+
+✅ 2. Using Object.assign()
+Example
+```
+ const obj1 = {a:1};
+ const obj2 = {b:2};
+
+ const merged = object.assign({}, obj1, obj2);
+ console.log(merged);
+
+
+ Output: { a:1, b:2 }
+
+ ```
+`👉 Object.assign() copies properties into the first argument.
+👉 If keys collide, later objects overwrite earlier ones.`
+
+✅ 3. Deep Merging (Nested Objects)
+
+Spread and Object.assign() do NOT deep merge.
+
+The easiest way to merge two objects is using the spread operator:
+const merged = { ...obj1, ...obj2 };
+It performs a shallow merge. For nested objects, you need a custom recursive deep merge.
+
+---
+
+### 30. What is the Event Loop ?
+
+Event loop is a mechanism in javaScript that allows non-blocking, asynchronous behavior, even though javaScript itself is singl-threaded.
