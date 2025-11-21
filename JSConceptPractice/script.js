@@ -30,23 +30,38 @@
 
 
 
-function Person(name, age){
-    this.name = name;
-    this.age = age;
-    this.greet = function(){
-        console.log(`Hi, Im ${this.name}`);
+// function Person(name, age){
+//     this.name = name;
+//     this.age = age;
+//     this.greet = function(){
+//         console.log(`Hi, Im ${this.name}`);
         
-    };
-}
+//     };
+// }
 
-const user = new Person("Shubham", 27);
-const user2 = new Person("yadav", 29)
+// const user = new Person("Shubham", 27);
+// const user2 = new Person("yadav", 29)
 
-user.greet();
-user2.greet();
+// user.greet();
+// user2.greet();
 
-console.log(user);
+// console.log(user);
 
+
+console.log("a");
+
+setTimeout(()=>{
+    console.log("b");;
+
+    
+},0);
+
+Promise.resolve().then(()=>{
+    console.log("c");
+    
+});
+
+console.log("d");
 
 
 
