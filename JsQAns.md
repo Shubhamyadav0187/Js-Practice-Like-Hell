@@ -546,3 +546,76 @@ It performs a shallow merge. For nested objects, you need a custom recursive dee
 ### 30. What is the Event Loop ?
 
 Event loop is a mechanism in javaScript that allows non-blocking, asynchronous behavior, even though javaScript itself is singl-threaded.
+
+
+JavaScript has one main thread, meaning it can do one task at a time.
+
+But we still use:
+
+setTimeout()
+
+fetch()
+
+Promises
+
+Async/await
+
+DOM events (click, input)
+
+All of these are asynchronous.
+
+So who manages them?
+👉 The Event Loop.
+
+The event loop continuously checks if the call stack is empty, and if it is, it pushes the next callback or promise result from the callback queue or microtask queue to the stack.
+
+🧩 Event Loop Flow
+
+You run code → goes to the call stack.
+
+If an async function appears (like setTimeout) → browser handles it.
+
+When the async task finishes:
+
+setTimeout result → goes to callback queue
+
+Promise result → goes to microtask queue
+
+Event loop always checks:
+
+If call stack is empty → microtask queue runs first
+
+Then callback queue runs.
+
+```
+console.log("A");
+
+setTimeout(() => {
+  console.log("B");
+}, 0);
+
+Promise.resolve().then(() => {
+  console.log("C");
+});
+
+console.log("D");
+
+```
+```
+Output:
+A
+D
+C
+B
+```
+
+🏁 In short
+The Event Loop:
+
+✔ Keeps JavaScript non-blocking
+✔ Manages async tasks
+✔ Moves tasks from queues → call stack
+✔ Gives priority to microtasks (promises)
+
+----
+
