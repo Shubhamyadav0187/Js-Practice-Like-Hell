@@ -48,25 +48,86 @@
 // console.log(user);
 
 
-console.log("a");
+// console.log("a");
 
-setTimeout(()=>{
-    console.log("b");;
+// setTimeout(()=>{
+//     console.log("b");;
 
     
-},0);
+// },0);
 
-Promise.resolve().then(()=>{
-    console.log("c");
+// Promise.resolve().then(()=>{
+//     console.log("c");
     
-});
+// });
 
-console.log("d");
-
-
+// console.log("d");
 
 
 
+// class User {
+//     constructor(name, email){
+//         this.name = name;
+//         this.email = email;
+//     }
+//     loggedIn(){
+//         console.log("loggedin");
+//     }
+// }
+
+// let user1 = new User("shubham", "shubham@shu");
+
+// let user2 = new User ("hshh", "bhsba")
+
+
+// function User(name, email){
+//     this.name = name;
+//     this.email = email;
+
+//     loggedin =  function(){
+//         console.log("logged in")
+//     }
+// }
+
+
+// let user3 = new User("shubham", "user@shubham")
+
+
+// Encapsulation == hiding data + bundling data and methods inside an object.
+// class Perosn{
+//     constructor(name , age){
+//         this.name = name;
+//         this.age = age; 
+//     }
+
+//     speak(){
+//         console.log(`Hello, I'm ${this.name}`);
+        
+//     }
+// } 
+//  const p = new Perosn('shubham', 22);
+//  p.speak();
+
+// console.log("Below is the Example of Encapusalation ");
+
+//  class BankAccount{
+//     #balance = 0; // private field 
+
+//     deposite(amount){
+//         this.#balance += amount;
+//     }
+
+//     getBalance(){
+//         return this.#balance;
+//     }
+//  }
+//  const acc = new BankAccount();
+//  acc.deposite(100000);
+//  console.log(acc.getBalance());
+//  acc.deposite(20000);
+//  console.log(acc.getBalance());
+//  console.log(acc.#balance); 
+// this is true encapsulation like java/c++.
 
 
 
@@ -74,10 +135,83 @@ console.log("d");
 
 
 
+//Abstraction 
+// Abstraction = show only necesssary details, hide complex inner logic.
+// class Car {
+//     startEngine(){
+//         console.log("Engine started");
+        
+//     }
+// }
+
+// console.log("Below is the example of Abstraction");
+// //Inheritance
+// // Inheritance means one class inherits properties/methods from another class using extends.
+// class Animal {
+//     eat(){
+//         console.log("Eating...");
+        
+//     }
+// }
+
+// class Dog extends Animal {
+//     bark(){
+//         console.log("Barking...");
+        
+//     }
+// }
+// const d = new Dog();
+// d.eat();
+// d.bark();
+ 
 
 
 
 
+
+// usper() Keyword in Js used to call parent constructor.
+
+// class Animal {
+//     constructor(name){
+//         this.name = name;
+//     }
+// }
+// class Dog extends Animal {
+//     constructor(name, breed){
+//         super(name);  // call parent constructor 
+//         this.breed = breed;
+//     }
+// }
+// const obj1 = new Dog("dogesh", "jermanshefered")
+// console.log(obj1.name);
+
+
+
+
+
+
+//Polymorphism = same method name, different behavior depending on the object.
+
+class Animal {
+    speak(){
+        console.log("Animal speak");
+        
+    }
+}
+
+class DOg extends Animal {
+    bark(){
+        console.log("Dog barks");
+        
+    }
+}
+ 
+const a = new Animal();
+const d = new DOg();
+a.speak();
+d.bark();
+d.speak()
+a.bark()
 
 
 

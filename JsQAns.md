@@ -619,3 +619,260 @@ The Event Loop:
 
 ----
 
+### 32. What is the Call Stack and Task Queue?
+✅ Call Stack
+
+A data structure where JavaScript keeps track of what function is currently running.
+
+It follows LIFO (Last In, First Out).
+```
+Example:
+
+function a() { b(); }
+function b() { console.log("Done"); }
+
+a();
+
+
+Call Stack execution:
+
+a() → b() → console.log → pop → pop → pop
+```
+✅ Task Queue (Callback Queue)
+
+Stores callbacks from asynchronous tasks like:
+
+setTimeout
+
+DOM events
+
+setInterval
+
+Event loop pushes tasks from this queue to the call stack when the stack is empty.
+---
+
+### 33. What are Promises?
+
+A Promise represents a value that will be available now, later, or never.
+
+It has 3 states:
+
+pending
+
+fulfilled
+
+rejected
+```
+Example:
+
+let promise = new Promise((resolve, reject) => {
+  setTimeout(() => resolve("Success"), 1000);
+});
+```
+
+Used to avoid callback hell and handle async tasks in a cleaner way.
+
+----
+
+### 34. Difference Between async/await and Promises
+Promises Use .then() and .catch()
+
+More verbose
+
+Chain-based
+
+async/await
+
+Syntactic sugar over promises
+
+Looks like synchronous code
+
+Easier to read and write
+```
+Example:
+
+Promise:
+
+fetchData()
+  .then(res => console.log(res))
+  .catch(err => console.error(err));
+
+
+async/await:
+
+async function load() {
+  try {
+    const res = await fetchData();
+    console.log(res);
+  } catch (err) {
+    console.error(err);
+  }
+}
+```
+
+----
+
+
+### 35. What happens if you don’t handle a Promise rejection?
+
+If a promise is rejected and you don’t use .catch() or try/catch, then:
+
+In Browsers:
+
+You get “UnhandledPromiseRejection” error in console.
+
+In Node.js:
+
+It may crash the app (older versions)
+
+Newer versions show a warning
+
+Always handle rejections:
+
+`promise.catch(err => console.log(err));`
+
+---
+
+### 36. What is Callback Hell and How to Avoid It?
+```
+Callback Hell = when callbacks are nested too deeply:
+doA(() => {
+  doB(() => {
+    doC(() => {
+      doD(() => {
+        console.log("Done");
+      });
+    });
+  });
+});
+
+```
+Problems:
+
+Hard to read
+
+Hard to debug
+
+Hard to maintain
+
+How to Avoid It
+
+✔ Promises
+✔ async/await
+✔ Modular functions
+✔ Use promise chaining
+
+---
+
+### 37. Explain Microtasks vs Macrotasks
+
+1. Microtasks
+
+Promise callbacks (then, catch)
+
+MutationObserver
+
+queueMicrotask()
+
+2. Macrotasks
+
+setTimeout
+
+setInterval
+
+DOM events
+
+I/O
+
+Execution Order
+
+All microtasks are executed first
+
+Then one macrotask
+
+Repeat
+
+```
+
+Example:
+
+setTimeout(() => console.log("B"), 0);
+Promise.resolve().then(() => console.log("A"));
+
+
+Output:
+
+A
+B
+```
+
+### 38. How does setTimeout work in JavaScript?
+
+setTimeout does not run inside the call stack.
+
+It is registered with the browser timer APIs.
+
+After the timer finishes, the callback goes to the task queue.
+
+The callback executes only when the call stack is empty.
+
+```
+
+Example:
+
+setTimeout(() => console.log("Hello"), 0);
+console.log("Hi");
+
+
+Output:
+
+Hi
+Hello
+
+```
+
+### 39. How can you cancel a fetch request?
+
+Use AbortController.
+```
+
+Example:
+
+const controller = new AbortController();
+
+fetch("url", { signal: controller.signal })
+  .then(res => res.json())
+  .catch(err => console.log(err.message));
+
+controller.abort(); // cancels the request
+```
+### 40. What are common ways to handle asynchronous errors?
+✔ 1. Promises with .catch()
+
+`promise.catch(err => console.log(err));`
+
+✔ 2. Try/Catch with async/await
+```
+async function load() {
+  try {
+    const data = await fetchData();
+  } catch (err) {
+    console.log(err);
+  }
+}
+```
+
+✔ 3. Global error handlers
+
+Browser:
+```
+window.addEventListener("unhandledrejection", (err) => {
+  console.log("Unhandled:", err.reason);
+});
+```
+
+Node.js:
+```
+process.on("unhandledRejection", err => console.error(err));
+```
+✔ 4. Using AbortController for cancellation errors
