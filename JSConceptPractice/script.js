@@ -1,5 +1,175 @@
-// "use strict"
-// OOP
+// 1️⃣ Closure
+
+// Create a function counter() which returns a function.
+// Every time the returned function is called, it should increase and return a count.
+
+
+// function counter(){
+//     let counter = 0;
+//     return function(){
+//         console.log(counter++);
+        
+//     }
+// }
+
+// const count = counter();
+// count()
+// count()
+// count()
+// count()
+
+
+
+
+// 2️⃣ Higher Order Function
+
+// function calculate(arr, fn){
+//     let result = []
+//     for(let i=0; i<arr.length; i++){
+//         result.push(fn(arr[i]))
+//     }
+//      return result
+// }
+
+// let ans = calculate([1,2,3,4], (val)=>{
+//      return val*val;
+// })
+// console.log(ans);
+
+
+
+
+
+// 3️⃣ Callback
+// function fetchData(callback){
+//     setTimeout(function(){
+//         callback("Data received")
+//     }, 2000)
+// }
+
+// fetchData(function(data){
+//     console.log(data);
+    
+// })
+
+
+
+
+
+// 5️⃣ Sum of Even Numbers (reduce only)
+
+// let arr = [1,2,3,4,5,6];
+// let ans = arr.filter(val => val%2==0).reduce((acc,val)=>{
+//     return acc+val;
+// })
+// console.log(ans);
+
+
+// const sum = arr.reduce((acc,curr)=>{
+//     if(curr%2==0){
+//         acc += curr;
+       
+//     }
+//      return acc;
+// },0)
+// console.log(sum);
+
+
+
+
+// 7️⃣ this Keyword
+// const obj = {
+//     name: "shubham",
+//     getName: function(){
+//         return this.name;
+//     }
+// };
+// const get = obj.getName();
+// console.log(get);
+
+
+
+
+// 8️⃣ Promise
+// Create a function isEven(num) that:
+// Resolves if number is even
+// Rejects if odd
+
+
+// function isEven(num) {
+//   return new Promise((resolve, reject) => {
+//     if (num % 2 === 0) {
+//       resolve("Number is Even");
+//     } else {
+//       reject("Number is Odd");
+//     }
+//   });
+// }
+
+// isEven(4)
+//   .then(console.log)
+//   .catch(console.log);
+
+
+
+// 9️⃣ Async / Await
+// async function fetchData(){
+//     try{
+//         const res = await fetch();
+//         const data = await res.json()
+//         console.log(data);
+        
+//     }catch(err){
+//         console.log(err);
+        
+//     }
+// }
+// fetchData();
+
+
+
+
+// 🔟 Flatten Array (No flat())
+function flatten(arr){
+    let result = []
+
+    for(let i=0; i<arr.length; i++){
+        if(Array.isArray(arr[i])){
+            result.push(...arr[i])
+        }else {
+            result.push(arr[i]);
+        }
+    }
+    return result;
+}
+const ans = flatten([1,[2,3],4, [5,6,7,8]])
+console.log(ans);
+
+
+
+// let myPromise = new Promise((resolve, reject) =>{
+//     let success = true;
+//     if(success){
+//         resolve("Task completed successfully");
+//     }else {
+//         reject("task failed");
+//     }
+// });
+
+// myPromise
+//    .then(result => {
+//     console.log(result);
+    
+//    })
+//    .catch(error =>{
+//     console.log(error);
+    
+//    })
+//    .finally(() =>{
+//     console.log("Promise finished");
+    
+//    })
+
 
 // function Person(name){
 //     this.name = name
@@ -192,29 +362,41 @@
 
 //Polymorphism = same method name, different behavior depending on the object.
 
-class Animal {
-    speak(){
-        console.log("Animal speak");
+// class Animal {
+//     speak(){
+//         console.log("Animal speak");
         
-    }
-}
+//     }
+// }
 
-class DOg extends Animal {
-    bark(){
-        console.log("Dog barks");
+// class DOg extends Animal {
+//     bark(){
+//         console.log("Dog barks");
         
-    }
-}
+//     }
+// }
  
-const a = new Animal();
-const d = new DOg();
-a.speak();
-d.bark();
-d.speak()
-a.bark()
+// const a = new Animal();
+// const d = new DOg();
+// a.speak();
+// d.bark();
+// d.speak()
+// a.bark()
 
 
 
+
+
+
+// Prototype-Based OOP - Javascript uses prototype inheritance, not class- based inheritance (classes are just syntax sugar)
+// function Person(name) {
+//     this.name = name
+// }
+// Person.prototype.sayHello = function(){
+//     console.log("Hello" + this.name);
+// }
+// const p = new Person("shubham");
+// p.sayHello();
 // function Person(name){
 //     let secret = "mysecret";
 //     this.name = name;

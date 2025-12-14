@@ -778,6 +778,50 @@ async function getUser(){
 getUser().then(res => console.log(res))
 </pre>
 
+
+# Promise in JavaScript?
+## A Promise is an object that represents the future result of an asynchronous operation.
+`👉 Simply: “Promise = I promise to give you a result later (success or failure)”`
+
+
+
+
+## States of a Promise
+### A Promise has 3 states:
+#### Pending – operation is still running
+#### Fulfilled – operation completed successfully
+#### Rejected – operation failed
+
+
+````
+
+let myPromise = new Promise((resolve, reject) => {
+    let success = true;
+
+    if (success) {
+        resolve("Task completed successfully");
+    } else {
+        reject("Task failed");
+    }
+});
+
+
+````
+#### Consuming a Promise (then, catch, finally)
+```
+myPromise
+  .then(result => {
+      console.log(result);
+  })
+  .catch(error => {
+      console.log(error);
+  })
+  .finally(() => {
+      console.log("Promise finished");
+  });
+
+```
+
 # 🔹 Advanced Interview Questions on Promises
 
 ### Difference between callbacks and promises?
