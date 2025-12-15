@@ -130,20 +130,58 @@
 
 
 // 🔟 Flatten Array (No flat())
-function flatten(arr){
-    let result = []
+// function flatten(arr){
+//     let result = []
 
-    for(let i=0; i<arr.length; i++){
-        if(Array.isArray(arr[i])){
-            result.push(...arr[i])
-        }else {
-            result.push(arr[i]);
-        }
-    }
-    return result;
+//     for(let i=0; i<arr.length; i++){
+//         if(Array.isArray(arr[i])){
+//             result.push(...arr[i])
+//         }else {
+//             result.push(arr[i]);
+//         }
+//     }
+//     return result;
+// }
+// const ans = flatten([1,[2,3],4, [5,6,7,8]])
+// console.log(ans);
+
+
+
+
+
+//left rotate by 1
+// let arr =[1,2,3,4];
+// let temp = arr[0];
+// for(let i=0; i<arr.length; i++){
+//      arr[i] = arr[i+1];
+
+// }
+
+// arr[arr.length-1]=temp;
+
+// console.log(arr);
+
+//right rotate by 1;
+let arr =[1,2,3,4];
+for(let k=1; k<=5 ; k++){
+     let temp = arr[arr.length-1];
+
+    for(let i=arr.length-2; i>=0; i--){
+     arr[i+1] = arr[i];
 }
-const ans = flatten([1,[2,3],4, [5,6,7,8]])
-console.log(ans);
+arr[0]=temp;
+
+
+}
+
+console.log(arr);
+  
+
+
+
+
+
+
 
 
 
